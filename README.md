@@ -5,7 +5,7 @@
 
 ### 修改步骤：
 
-```
+```javascrpt
 // 更新飞书卡片消息频率 单位（毫秒ms）
 const frequency = 800;
 
@@ -20,7 +20,7 @@ const enable_stream = true;
 https://github.com/openai/openai-node/issues/18#issuecomment-1369996933
 https://platform.openai.com/docs/api-reference/chat/create
 
-```
+```javascrpt
 
 chatGPT = async (content) => {
       console.log(content);
@@ -37,7 +37,7 @@ chatGPT = async (content) => {
 
 #### 新增回复卡片消息和更新卡片消息方法及卡片构造方法
 
-```
+```javascrpt
 // 用飞书机器人回复用户card消息的方法
 const feishuCardReply = async (objs) => {
   const tenantToken = await getTenantToken();
@@ -77,7 +77,7 @@ const getCardContent = (content,objs) => {
 https://github.com/openai/openai-node/issues/18#issuecomment-1372047643
 https://2ality.com/2018/04/async-iter-nodejs.html#processing-async-iterables-via-async-generators
 
-```
+```javascrpt
 async function* chunksToLines(chunksAsync) {
   let previous = "";
   for await (const chunk of chunksAsync) {
@@ -108,7 +108,7 @@ async function* streamCompletion(data) {
 
 #### 回复卡片消息和更新卡片消息
 
-```
+```javascrpt
 if(enable_stream){
     replyContent = '思考中...';
     if(replyMsgId == null){
