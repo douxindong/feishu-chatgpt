@@ -37,8 +37,11 @@ chatGPT = async (content) => {
 
 #### 新增回复卡片消息和更新卡片消息方法及卡片构造方法
 
+
+- 用飞书机器人回复用户card消息的方法
+[飞书开发文档:回复用户card消息的方法](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/reply)
+
 ```javascrpt
-// 用飞书机器人回复用户card消息的方法
 const feishuCardReply = async (objs) => {
   const tenantToken = await getTenantToken();
   const url = `https://open.feishu.cn/open-apis/im/v1/messages/${objs.msgId}/reply`;
@@ -50,8 +53,13 @@ const feishuCardReply = async (objs) => {
   });
   return res.data.data;
 };
+```
 
-// 用飞书机器人回复用户消息的方法 - 更新卡片消息
+- 用飞书机器人回复用户消息的方法 - 更新卡片消息
+*单条消息更新频控为5QPS*
+[飞书开发文档:更新应用发送的消息卡片](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/patch)
+
+```javascrpt
 const feishuUpdateCardReply = async (objs) => {
   const tenantToken = await getTenantToken();
   const url = `https://open.feishu.cn/open-apis/im/v1/messages/${objs.msgId}`;
